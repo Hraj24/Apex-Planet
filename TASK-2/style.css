@@ -1,0 +1,189 @@
+/* ---------- Theme Variables ---------- */
+:root {
+  --bg-color: #f4f6f9;
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --primary: #c15c69;
+}
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #f4f4f4;
+  --card-bg: rgba(44, 44, 44, 0.9);
+}
+
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--primary);
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links li {
+  margin: 0 10px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.mode-toggle {
+  background: #fff;
+  color: var(--primary);
+  border-radius: 50%;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+}
+
+/* ---------- Grid Layout ---------- */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------- Form ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.input-group {
+  position: relative;
+}
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: var(--text-color);
+}
+.input-group label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: gray;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  top: -10px;
+  left: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: var(--primary);
+  background: var(--bg-color);
+  padding: 0 4px;
+}
+#formMessage {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #ea4c4c;
+}
+
+/* ---------- To-Do List ---------- */
+.todo-inputs {
+  display: flex;
+  gap: 10px;
+}
+.todo-list {
+  margin-top: 15px;
+  list-style: none;
+  padding: 0;
+}
+.todo-list li {
+  background: var(--card-bg);
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+.todo-list li button {
+  background: crimson;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.todo-list li button:hover {
+  background: darkred;
+}
+.todo-list li input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: #fff;
+  margin-top: 30px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🌐 My To-Do List Project</div>
+    <ul class="nav-links">
+      <li><a href="#form">Contact Form</a></li>
+      <li><a href="#todo">To-Do List</a></li>
+    </ul>
+    <button class="btn mode-toggle" onclick="toggleMode()">🌙</button>
+  </nav>
+
+  <!-- Main Layout -->
+  <main class="grid-layout">
+
+    <!-- Contact Form Section -->
+    <section id="form" class="card">
+      <h2>📬 Contact Us</h2>
+      <form id="contactForm" class="form">
+        <div class="input-group">
+          <input type="text" id="name" required>
+          <label for="name">Name *</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" required>
+          <label for="email">Email *</label>
+        </div>
+
+        <div class="input-group">
+          <textarea id="message" rows="4" required></textarea>
+          <label for="message">Message *</label>
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      <p id="formMessage"></p>
+    </section>
+
+    <!-- To-Do List Section -->
+    <section id="todo" class="card">
+      <h2>✅ To-Do List</h2>
+      <div class="todo-inputs">
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button class="btn" onclick="addTask()">Add</button>
+      </div>
+      <ul id="taskList" class="todo-list"></ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mohan Boddu. All Rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
